@@ -1,0 +1,11 @@
+list.tsv	type
+P1_vs_P2	C
+P2_vs_P7	A
+P3_vs_P5	C
+P4_vs_P1	R
+P4_vs_P2	CR
+P5_vs_P1	A
+P6_vs_P3	CR
+P6_vs_P5	R
+P6_vs_P7	CR
+P6_vs_P4	A

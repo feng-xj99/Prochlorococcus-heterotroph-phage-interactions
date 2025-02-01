@@ -1,0 +1,239 @@
+#phylum_metatranscriptome 
+library(magrittr)
+computed_persent <- function(path) {
+  data <- path %>%
+    read.delim(check.names = FALSE, row.names = 1)
+  data2 <- data %>%
+    mutate(sum = rowSums(.), persent = sum / sum(sum) * 100,
+           sum = NULL,) %>%
+    rbind(filter(., persent < 0.1) %>% colSums()) %>%
+    mutate(ASV_ID = c(data %>% rownames(), "others"))
+  filter(data2[1:(nrow(data2) - 1),], persent > 0.1) %>%
+    rbind(data2[nrow(data2),]) %>%
+    select(ncol(.), 1:(ncol(.) - 2)) %>%
+    set_rownames(seq_len(nrow(.))) %>%
+    return()
+}
+path <- "phylum.xls"
+phylumt_6_other  <- computed_persent(path)
+write.table (phylumt_6_other ,file ="phylumt_6_other.xls", sep ="\t", row.names =F)
+
+type <-read.table("samples.csv",header = TRUE,sep = ',')
+phylumt_6_other <-read.table("phylumt_6_other.xls",header = TRUE)%>%melt()
+phylumt_plot<-left_join(phylumt_6_other,type,by=c("variable"="name"))
+phylumt_plot$type1<-paste(phylumt_plot$type,'_',phylumt_plot$variable)
+
+col=c("#ECC847","#6BB658","#EC5158","#89B3D8","#F0E8E2","#F5CECA","#FDA769","#7F7F7F")
+phylumt_plot$ASV_ID<-factor(phylumt_plot$ASV_ID,levels = c("Uroviricota","Cyanobacteriota","Pseudomonadota","Bacteroidota","Balneolota","Planctomycetota","unclassified_Bacteria","others"))
+phylumt_plot$type1 <- factor(phylumt_plot$type1, levels=c("P _ P11", "P _ P12","P _ P13","PR _ P41","PR _ P42","PR _ P43", "PA _ P51","PA _ P52","PA _ P53","PAC _ P31","PAC _ P32","PAC _ P33","PAR _ P61","PAR _ P62","PAR _ P63","PC _ P21","PC _ P22","PC _ P23","PAC _ P71","PAC _ P72","PAC _ P73"))
+p_com<-ggplot(phylumt_plot,aes(type1,value,fill=ASV_ID))+
+  geom_bar(stat="identity",position = "fill")+
+  labs(x="",y="Proportions")+
+  labs(fill="")+
+  theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank(),axis.text.x=element_text(angle = 45, hjust = 1))+
+  scale_y_continuous(expand=c(0,0))+
+  scale_fill_manual(values = col)+
+  theme_bw()
+ggsave (p_com, filename="p_com-11.pdf", width=7, height=5)
+
+#genus_metatranscriptome in SF.6B
+computed_persent <- function(path) {
+  data <- path %>%
+    read.delim(check.names = FALSE, row.names = 1)
+  data2 <- data %>%
+    mutate(sum = rowSums(.), persent = sum / sum(sum) * 100,
+           sum = NULL,) %>%
+    rbind(filter(., persent < 0.1) %>% colSums()) %>%
+    mutate(ASV_ID = c(data %>% rownames(), "others"))
+  filter(data2[1:(nrow(data2) - 1),], persent > 0.1) %>%
+    rbind(data2[nrow(data2),]) %>%
+    select(ncol(.), 1:(ncol(.) - 2)) %>%
+    set_rownames(seq_len(nrow(.))) %>%
+    return()
+}
+path <- "genus.xls"
+phylumt_6_other  <- computed_persent(path)
+write.table (phylumt_6_other ,file ="genus_6_other-1.xls", sep ="\t", row.names =F)
+
+phylumt_6_other <-read.table("genus_6_other-1.xls",header = TRUE)%>%melt()
+phylumt_plot<-left_join(phylumt_6_other,type,by=c("variable"="name"))
+phylumt_plot$type1<-paste(phylumt_plot$type,'_',phylumt_plot$variable)
+
+phylumt_plot$type1<-paste(phylumt_plot$type,'_',phylumt_plot$variable)
+col=c("#ECC847","#6BB658","#EC5158","#ECD59F","#F0C8DC","#E8CAA4","#ADBED2","#D3E7EE","#89B3D8","#FFA289","#FEC868","#E5D67B","#E5EDCF","#ABDEE0","#E5EDF8","#F5CECA","#AF8F90","#CF79D1","#b4a7d6","#8aeeee","#FDA769","#7F7F7F")
+phylumt_plot$ASV_ID<-factor(phylumt_plot$ASV_ID,levels = c("Tangaroavirus","Prochlorococcus","Alteromonas","Henriciella","Hwanghaeella","Maricaulis","Marinobacter","Minwuia","Oceaniradius","Ochrobactrum","Psychroserpens","Roseibium","Roseitalea","Stutzerimonas","unclassified_Bacteria","unclassified_Balneolaceae","unclassified_Hyphomicrobiales","unclassified_Phycisphaerales","unclassified_Pseudomonadales","unclassified_Rhizobiaceae","unclassified_Rhodospirillales","others"))
+phylumt_plot$type1 <- factor(phylumt_plot$type1, levels=c("P _ P11", "P _ P12","P _ P13","PR _ P41","PR _ P42","PR _ P43", "PA _ P51","PA _ P52","PA _ P53","PAC _ P31","PAC _ P32","PAC _ P33","PAR _ P61","PAR _ P62","PAR _ P63","PC _ P21","PC _ P22","PC _ P23","PAC _ P71","PAC _ P72","PAC _ P73"))
+
+phylumt_plot$type<-factor(phylumt_plot$type,levels = c("P","PC","PR","PA","PAC","PAR"))
+phylumt_plot<- subset(phylumt_plot,type!="NA")
+
+p_com<-ggplot(phylumt_plot,aes(type1,value,fill=ASV_ID))+
+    geom_bar(stat="identity",position = "fill")+
+    labs(x="",y="Proportions")+
+    labs(fill="")+
+    theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank(),axis.text.x=element_text(angle = 45, hjust = 1))+
+    scale_y_continuous(expand=c(0,0))+
+    scale_fill_manual(values = col)+
+    facet_grid(~type, scales = "free", space = "free_x") +
+    theme_bw()
+ggsave (p_com, filename="SF.6B.pdf", width=9, height=5)
+
+##bubble-tar in Fig.3A
+library(Rmisc)
+phylumt_plot$type2<-paste(phylumt_plot$type,'_',phylumt_plot$day)
+phylumt_plot$lg<-log10(phylumt_plot$value+1)
+phylumt_plot_mean_lg<- summarySE(phylumt_plot, measurevar="lg", groupvars=c("ASV_ID","type2"))
+phylumt_plot_mean_lg<- subset(phylumt_plot_mean_lg,type2!="NA _ NA")
+phylumt_plot_mean_lg$type2 <- factor(phylumt_plot_mean_lg$type2 , levels=c("P _ 12","PR _ 12","PAC _ 12","PA _ 12","PAR _ 12","PC _ 42","PAC _ 42"))
+phylumt_plot_mean_lg$ASV_ID<-factor(phylumt_plot_mean_lg$ASV_ID,levels = c("Tangaroavirus","Prochlorococcus","Alteromonas","Henriciella","Hwanghaeella","Maricaulis","Marinobacter","Minwuia","Oceaniradius","Ochrobactrum","Psychroserpens","Roseibium","Roseitalea","Stutzerimonas","unclassified_Bacteria","unclassified_Balneolaceae","unclassified_Hyphomicrobiales","unclassified_Phycisphaerales","unclassified_Pseudomonadales","unclassified_Rhizobiaceae","unclassified_Rhodospirillales","others"))
+
+color = c(colorRampPalette(colors = c("navy","white"))(length(bk)/0.167),
+          colorRampPalette(colors = c("white","white"))(length(bk)/1),
+          colorRampPalette(colors = c("white","firebrick3"))(length(bk)/0.226))
+p<-ggplot(phylumt_plot_mean_lg,aes(x=type2,y=ASV_ID))+
+  scale_fill_gradientn(colours = color)+
+  theme_bw()+geom_point(aes(size=`lg`, fill=`lg`),shape=21,alpha=0.9)+
+  theme(panel.grid=element_line(colour ="#696969", size=0.2,linetype=3), axis.text.x =element_text(angle =45))+xlab(NULL) + ylab(NULL)+
+  theme(panel.border = element_rect(fill=NA,color="black", size=0.8, linetype="solid"))
+ggsave (p, filename="Fig.3A.pdf", width=5.5, height=11)
+write.table (phylumt_plot_mean_lg ,file ="phylumt_plot_mean_lg.xls", sep ="\t", row.names =F)
+
+##bubble-kegg in Fig.3B
+kegg <-read.table("bubble_pathway.pdf.xls",header = TRUE,sep = '\t')
+kegg$Sample<-factor(kegg$Sample,levels=c("P1","P4","P5","P3","P6","P2","P7"))
+kegg$lg<-log10(kegg$Abundance+1)
+
+bk <- c(seq(3.2,3.9,by=0.01),seq(3.9,4.1,by=0.01),seq(4.1,5.72,by=0.01))
+color = c(colorRampPalette(colors = c("blue","white"))(length(bk)/0.29),
+          colorRampPalette(colors = c("white","white"))(length(bk)/1),
+          colorRampPalette(colors = c("white","red"))(length(bk)/0.124))
+p_kegg<-ggplot(kegg,aes(x=Sample,y=Category))+
+  scale_fill_gradientn(colours = color)+
+  theme_bw()+geom_point(aes(size=`lg`, fill=`lg`),shape=21,alpha=0.9)+
+  theme(panel.grid=element_line(colour ="#696969", size=0.2,linetype=3), axis.text.x =element_text(angle =45))+xlab(NULL) + ylab(NULL)+
+  theme(panel.border = element_rect(fill=NA,color="black", size=0.8, linetype="solid"))
+ggsave (p_kegg, filename="Fig.3B.pdf", width=5.5, height=11)
+
+
+##Species and functional contribution in Fig.4
+a<-read.csv("Correspondence-nog.xls",header = TRUE,sep = "\t")
+library(reshape2)
+ab<-melt(a)
+ab$variable<-factor(ab$variable,levels=c("P1","P4","P5","P3","P6","P2","P7"))
+abc<-filter(ab,!func=='Other')
+#abc$group <- cut(abc$value, breaks = c(-Inf, 0.32, 0.38, Inf), labels = c("low", "remove", "high"))
+col<-c("#8DD3C7", "#FFFFB3", "#BEBADA", "#FB8072", "#80B1D3", "#FDB462", "#B3DE69","#FCCDE5", "#CCEBC5", "#FFED6F", "#D9D9D9")
+
+p_com<-ggplot(abc,aes(variable,value,fill=func))+
+  geom_bar(stat="identity")+
+  facet_grid(~Taxon,scales = "free",space="free_x")+
+  labs(x="",y="Relative Contribution")+
+  labs(fill="")+
+  theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank(),axis.text.x=element_text(angle =45))+
+  scale_y_continuous(expand=c(0,0))+
+  scale_fill_manual(values = col)+
+  theme_bw()
+ggsave (p_com, filename="Fig.4.pdf", width=12, height=5)
+
+
+###kegg_enrich in SF.10
+kegg<-read.table("kegg_enrich.csv",header = TRUE,sep = ',')
+
+p_go<-ggplot(kegg,aes(x=Database,y=Description))+
+  scale_fill_gradientn(colours = colorRampPalette(c("navy","white","firebrick3"))(100))+
+  theme_bw()+geom_point(aes(size=`count`, fill=`Pvalue`),shape=21,alpha=0.9)+
+  theme(panel.grid=element_line(colour ="#696969", size=0.2,linetype=3), axis.text.x =element_text(angle =45))+xlab(NULL) + ylab(NULL)+
+  theme(panel.border = element_rect(fill=NA,color="black", size=0.8, linetype="solid"))+
+  facet_wrap(~type,scales = "free")
+ggsave (p_go, filename="SF.10.pdf", width=11, height=10)
+
+###go_enrich in SF.11
+list<-read.csv("go/list.tsv",header = TRUE, sep="\t")
+all_DE <- data.frame()
+for (i in list$list.tsv) {
+  go_de<-read.table(paste0("go/",i, ".xls"),header = TRUE, sep="\t")
+  DE<-mutate(go_de,direction=i)
+  all_DE <- bind_rows(all_DE, DE)
+}
+all_DE_filter<-filter(all_DE,!grepl("GO:000",ID))%>%filter(P.uncorrected<0.05)
+write.table(all_DE_filter, file = "all_DE_filter_go-1.tsv", sep = "\t", row.names = FALSE)
+
+all_DE_filter_go<-read.csv("all_DE_filter_go-1.tsv",header = TRUE, sep="\t")%>%left_join(list,by=c('direction'='list.tsv'))
+p_go<-ggplot(all_DE_filter_go,aes(x=direction,y=Description))+
+  scale_fill_gradientn(colours = colorRampPalette(c("navy","white","firebrick3"))(100))+
+  theme_bw()+geom_point(aes(size=`Sample.number`, fill=`P.corrected`),shape=21,alpha=0.9)+
+  theme(panel.grid=element_line(colour ="#696969", size=0.2,linetype=3), axis.text.x =element_text(angle =45))+xlab(NULL) + ylab(NULL)+
+  theme(panel.border = element_rect(fill=NA,color="black", size=0.8, linetype="solid"))+
+  facet_wrap(~type,scales = "free")
+ggsave (p_go, filename="SF.11.pdf", width=14, height=10)
+
+
+##DGEs and Pathway in Fig.7_SF.13_SF.14
+ko_kegg_p<-read.csv("ko_kegg_p_2.tsv",header = TRUE,sep="\t")
+annotation<-read.csv("all_annotation_stat.txt",header = TRUE,sep="\t")
+ko_kegg_p<-separate_rows(ko_kegg_p,Pathway,sep=",",convert=F)%>%left_join(annotation,by=c("seq_id"="GeneID"))
+ko_kegg_p$KO_gene<-paste(ko_kegg_p$KO.x,'_',ko_kegg_p$gene_name)
+ko_kegg_p$Pathway<-factor(ko_kegg_p$Pathway,levels = c("map00195","map00010","map00030","map00051","map00130","map00500","map02024","map02020","-"))
+ko_kegg_p<-filter(ko_kegg_p,g=="Alteromonas" | 
+                    g=="Prochlorococcus" |
+                    g=="Hwanghaeella" | 
+                    g=="Labrenzia"|
+                    g=="Maricaulis"|
+                    g=="Marinobacter" | 
+                    g=="Oceaniradius" | 
+                    g=="Psychroserpens"| 
+                    g=="Tangaroavirus" )%>%filter(p.value<0.05)
+
+bk <- c(seq(-8,-0.1,by=0.01),seq(-0.1,0.1,by=0.01),seq(0.1,13,by=0.01))
+color = c(colorRampPalette(colors = c("blue","white"))(length(bk)/0.66),
+          colorRampPalette(colors = c("white","white"))(length(bk)/10),
+          colorRampPalette(colors = c("white","red"))(length(bk)/0.36))
+
+p<-ggplot(ko_kegg_p,aes(x=g,y=KO.x))+
+  scale_fill_gradientn(colours = color)+
+  theme_bw()+geom_point(aes(size=`abslogfc`,fill=`logFC.P3.P5.`),shape=21,alpha=0.9)+
+  facet_wrap(~Pathway,scales = "free")+
+  theme(panel.grid=element_line(colour ="#696969", size=0.2,linetype=3), axis.text.x =element_text(angle =45))+xlab(NULL) + ylab(NULL)+
+  theme(panel.border = element_rect(fill=NA,color="black", size=0.8, linetype="solid"))
+
+ggsave (p, filename="Fig.7_SF.13.pdf", width=12, height=20)
+write.table(ko_kegg_p, file = "Fig.7_SF.13.tsv", sep = "\t", row.names = FALSE)
+
+g_kegg_65<-read.csv("g_kegg_65.final.tsv",header = TRUE,sep="\t")
+annotation<-read.csv("all_annotation_stat.txt",header = TRUE,sep="\t")
+g_kegg_65<-separate_rows(g_kegg_65,Pathway,sep=",",convert=F)%>%left_join(annotation,by=c("seq_id"="GeneID"))
+g_kegg_65$KO_gene<-paste(g_kegg_65$KO.x,'_',g_kegg_65$gene_name)
+g_kegg_65<-filter(g_kegg_65,g=="Alteromonas" | 
+                    g=="Prochlorococcus" |
+                    g=="Hwanghaeella" | 
+                    g=="Labrenzia"|
+                    g=="Maricaulis"|
+                    g=="Marinobacter" | 
+                    g=="Oceaniradius" | 
+                    g=="Psychroserpens"| 
+                    g=="Foturvirus" )%>%filter(p.value<0.05)
+g_kegg_65<-filter(g_kegg_65,Pathway=="map00010" | 
+                    Pathway=="map00030"| 
+                    Pathway=="map00051"|
+                    Pathway=="map00130" | 
+                    Pathway=="map00500" | 
+                    Pathway=="map02024"|
+                    Pathway=="map02020"|
+                    Pathway=="map00020"|
+                    Pathway=="-" )
+g_kegg_65$Pathway<-factor(g_kegg_65$Pathway,levels = c("map00010","map00020","map00030","map00051","map00130","map00500","map02024","map02020","-"))
+
+bk <- c(seq(-7.5,-0.1,by=0.01),seq(-0.1,0.1,by=0.01),seq(0.1,6,by=0.01))
+color = c(colorRampPalette(colors = c("blue","white"))(length(bk)/0.44),
+          colorRampPalette(colors = c("white","white"))(length(bk)/10),
+          colorRampPalette(colors = c("white","red"))(length(bk)/0.56))
+
+p<-ggplot(g_kegg_65,aes(x=g,y=KO.x))+
+  scale_fill_gradientn(colours = color)+
+  theme_bw()+geom_point(aes(size=`abslogfc`,fill=`logFC.P6.P5.`),shape=21,alpha=0.9)+
+  facet_wrap(~Pathway,scales = "free")+
+  theme(panel.grid=element_line(colour ="#696969", size=0.2,linetype=3), axis.text.x =element_text(angle =45))+xlab(NULL) + ylab(NULL)+
+  theme(panel.border = element_rect(fill=NA,color="black", size=0.8, linetype="solid"))
+
+ggsave (p, filename="Fig.7_SF.14.pdf", width=14, height=25)
+write.table(g_kegg_65, file = "Fig.7_SF.14.tsv", sep = "\t", row.names = FALSE)

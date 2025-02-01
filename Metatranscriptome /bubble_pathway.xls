@@ -1,0 +1,295 @@
+Sample	Category	Abundance
+P1	2-Oxocarboxylic acid metabolism	7494.217
+P3	2-Oxocarboxylic acid metabolism	8226.747
+P4	2-Oxocarboxylic acid metabolism	7819.567
+P5	2-Oxocarboxylic acid metabolism	11403.17767
+P6	2-Oxocarboxylic acid metabolism	7948.31
+P2	2-Oxocarboxylic acid metabolism	7328.258
+P7	2-Oxocarboxylic acid metabolism	7947.271667
+P1	ABC transporters	8750.551333
+P3	ABC transporters	5856.472
+P4	ABC transporters	8984.649
+P5	ABC transporters	11445.87767
+P6	ABC transporters	8489.553333
+P2	ABC transporters	8139.961333
+P7	ABC transporters	8865.096667
+P1	Amino sugar and nucleotide sugar metabolism	5450.683667
+P3	Amino sugar and nucleotide sugar metabolism	3717.945667
+P4	Amino sugar and nucleotide sugar metabolism	5692.952
+P5	Amino sugar and nucleotide sugar metabolism	7996.161333
+P6	Amino sugar and nucleotide sugar metabolism	6014.885333
+P2	Amino sugar and nucleotide sugar metabolism	6676.726667
+P7	Amino sugar and nucleotide sugar metabolism	7564.875667
+P1	Bacterial secretion system	6962.740333
+P3	Bacterial secretion system	4813.77
+P4	Bacterial secretion system	6847.305667
+P5	Bacterial secretion system	9582.95
+P6	Bacterial secretion system	7403.399333
+P2	Bacterial secretion system	6480.808
+P7	Bacterial secretion system	7306.644
+P1	Biosynthesis of amino acids	39350.28533
+P3	Biosynthesis of amino acids	25336.618
+P4	Biosynthesis of amino acids	40051.302
+P5	Biosynthesis of amino acids	54557.94267
+P6	Biosynthesis of amino acids	42167.70167
+P2	Biosynthesis of amino acids	41389.13033
+P7	Biosynthesis of amino acids	45180.65233
+P1	Biosynthesis of cofactors	36251.58967
+P3	Biosynthesis of cofactors	20915.85933
+P4	Biosynthesis of cofactors	34810.16433
+P5	Biosynthesis of cofactors	47413.49
+P6	Biosynthesis of cofactors	37294.90233
+P2	Biosynthesis of cofactors	34300.523
+P7	Biosynthesis of cofactors	37370.335
+P1	Biosynthesis of nucleotide sugars	6431.630667
+P3	Biosynthesis of nucleotide sugars	4258.647333
+P4	Biosynthesis of nucleotide sugars	6834.558
+P5	Biosynthesis of nucleotide sugars	9224.643667
+P6	Biosynthesis of nucleotide sugars	6945.269667
+P2	Biosynthesis of nucleotide sugars	7584.991
+P7	Biosynthesis of nucleotide sugars	8610.158667
+P1	Biosynthesis of secondary metabolites	102267.4657
+P3	Biosynthesis of secondary metabolites	65801.15433
+P4	Biosynthesis of secondary metabolites	109306.599
+P5	Biosynthesis of secondary metabolites	148654.6307
+P6	Biosynthesis of secondary metabolites	121597.9423
+P2	Biosynthesis of secondary metabolites	119794.59
+P7	Biosynthesis of secondary metabolites	129197.1207
+P1	Carbon fixation in photosynthetic organisms	15731.07367
+P3	Carbon fixation in photosynthetic organisms	6040.004667
+P4	Carbon fixation in photosynthetic organisms	18605.27133
+P5	Carbon fixation in photosynthetic organisms	24882.11967
+P6	Carbon fixation in photosynthetic organisms	24000.00067
+P2	Carbon fixation in photosynthetic organisms	25470.45467
+P7	Carbon fixation in photosynthetic organisms	26892.60967
+P1	Carbon fixation pathways in prokaryotes	6886.762333
+P3	Carbon fixation pathways in prokaryotes	6372.087333
+P4	Carbon fixation pathways in prokaryotes	7512.56
+P5	Carbon fixation pathways in prokaryotes	10023.54133
+P6	Carbon fixation pathways in prokaryotes	7873.379667
+P2	Carbon fixation pathways in prokaryotes	7231.570333
+P7	Carbon fixation pathways in prokaryotes	7432.137667
+P1	Carbon metabolism	41243.73767
+P3	Carbon metabolism	29525.33633
+P4	Carbon metabolism	45922.27
+P5	Carbon metabolism	63480.99067
+P6	Carbon metabolism	52576.59733
+P2	Carbon metabolism	50825.43333
+P7	Carbon metabolism	53972.37067
+P1	Cell cycle - Caulobacter	12045.54033
+P3	Cell cycle - Caulobacter	3492.527667
+P4	Cell cycle - Caulobacter	9995.318333
+P5	Cell cycle - Caulobacter	12938.484
+P6	Cell cycle - Caulobacter	11052.889
+P2	Cell cycle - Caulobacter	9623.178667
+P7	Cell cycle - Caulobacter	10819.86033
+P1	Citrate cycle (TCA cycle)	6410.307333
+P3	Citrate cycle (TCA cycle)	7616.891
+P4	Citrate cycle (TCA cycle)	7065.079667
+P5	Citrate cycle (TCA cycle)	9456.950333
+P6	Citrate cycle (TCA cycle)	6964.493333
+P2	Citrate cycle (TCA cycle)	5863.051
+P7	Citrate cycle (TCA cycle)	6249.820333
+P1	Cysteine and methionine metabolism	10323.46067
+P3	Cysteine and methionine metabolism	7265.441667
+P4	Cysteine and methionine metabolism	9606.016
+P5	Cysteine and methionine metabolism	12850.50033
+P6	Cysteine and methionine metabolism	9943.610333
+P2	Cysteine and methionine metabolism	9146.546
+P7	Cysteine and methionine metabolism	9875.534667
+P1	Fatty acid biosynthesis	6942.684333
+P3	Fatty acid biosynthesis	2419.659
+P4	Fatty acid biosynthesis	7343.023
+P5	Fatty acid biosynthesis	9535.224333
+P6	Fatty acid biosynthesis	8274.862
+P2	Fatty acid biosynthesis	8294.211667
+P7	Fatty acid biosynthesis	8540.618
+P1	Fatty acid metabolism	7473.688333
+P3	Fatty acid metabolism	7936.000333
+P4	Fatty acid metabolism	7967.945333
+P5	Fatty acid metabolism	11577.113
+P6	Fatty acid metabolism	8977.394667
+P2	Fatty acid metabolism	8846.734
+P7	Fatty acid metabolism	9069.085
+P1	Flagellar assembly	12107.64567
+P3	Flagellar assembly	6034.476667
+P4	Flagellar assembly	15998.384
+P5	Flagellar assembly	21676.70233
+P6	Flagellar assembly	16797.994
+P2	Flagellar assembly	14065.23467
+P7	Flagellar assembly	16299.31033
+P1	Fructose and mannose metabolism	5803.038667
+P3	Fructose and mannose metabolism	1684.621
+P4	Fructose and mannose metabolism	6021.317
+P5	Fructose and mannose metabolism	8011.453667
+P6	Fructose and mannose metabolism	6759.269667
+P2	Fructose and mannose metabolism	8429.920333
+P7	Fructose and mannose metabolism	9186.248333
+P1	"Glycine, serine and threonine metabolism"	7329.608
+P3	"Glycine, serine and threonine metabolism"	4591.264667
+P4	"Glycine, serine and threonine metabolism"	7650.116333
+P5	"Glycine, serine and threonine metabolism"	10843.88933
+P6	"Glycine, serine and threonine metabolism"	7811.743
+P2	"Glycine, serine and threonine metabolism"	7615.195333
+P7	"Glycine, serine and threonine metabolism"	8310.976
+P1	Glycolysis / Gluconeogenesis	13602.70167
+P3	Glycolysis / Gluconeogenesis	11367.02167
+P4	Glycolysis / Gluconeogenesis	14892.048
+P5	Glycolysis / Gluconeogenesis	20283.00633
+P6	Glycolysis / Gluconeogenesis	15571.74667
+P2	Glycolysis / Gluconeogenesis	16908.43433
+P7	Glycolysis / Gluconeogenesis	17949.26667
+P1	Glyoxylate and dicarboxylate metabolism	13100.94867
+P3	Glyoxylate and dicarboxylate metabolism	15107.928
+P4	Glyoxylate and dicarboxylate metabolism	15814.91333
+P5	Glyoxylate and dicarboxylate metabolism	22527.33133
+P6	Glyoxylate and dicarboxylate metabolism	20305.90667
+P2	Glyoxylate and dicarboxylate metabolism	17620.80533
+P7	Glyoxylate and dicarboxylate metabolism	18028.279
+P1	Metabolic pathways	381085.1363
+P3	Metabolic pathways	135332.1883
+P4	Metabolic pathways	378354.255
+P5	Metabolic pathways	508442.4987
+P6	Metabolic pathways	443471.8497
+P2	Metabolic pathways	529435.016
+P7	Metabolic pathways	496219.5813
+P1	Methane metabolism	8500.063667
+P3	Methane metabolism	4729.114
+P4	Methane metabolism	9321.010333
+P5	Methane metabolism	12784.596
+P6	Methane metabolism	9636.197667
+P2	Methane metabolism	11347.055
+P7	Methane metabolism	12282.44367
+P1	Microbial metabolism in diverse environments	52220.00567
+P3	Microbial metabolism in diverse environments	48096.71833
+P4	Microbial metabolism in diverse environments	57001.36333
+P5	Microbial metabolism in diverse environments	77488.80067
+P6	Microbial metabolism in diverse environments	64308.33967
+P2	Microbial metabolism in diverse environments	61384.158
+P7	Microbial metabolism in diverse environments	65000.33933
+P1	NOD-like receptor signaling pathway	6761.860333
+P3	NOD-like receptor signaling pathway	2208.324333
+P4	NOD-like receptor signaling pathway	8202.366333
+P5	NOD-like receptor signaling pathway	9888.944333
+P6	NOD-like receptor signaling pathway	8557.293333
+P2	NOD-like receptor signaling pathway	9406.174333
+P7	NOD-like receptor signaling pathway	10482.00567
+P1	Nucleotide metabolism	8353.13
+P3	Nucleotide metabolism	5364.255333
+P4	Nucleotide metabolism	8251.872667
+P5	Nucleotide metabolism	11001.802
+P6	Nucleotide metabolism	8571.113333
+P2	Nucleotide metabolism	8535.770333
+P7	Nucleotide metabolism	9885.282333
+P1	Oxidative phosphorylation	27569.03833
+P3	Oxidative phosphorylation	9990.295667
+P4	Oxidative phosphorylation	26284.82567
+P5	Oxidative phosphorylation	33992.47633
+P6	Oxidative phosphorylation	31101.88933
+P2	Oxidative phosphorylation	30421.32767
+P7	Oxidative phosphorylation	30158.43
+P1	Pentose phosphate pathway	12755.14567
+P3	Pentose phosphate pathway	3589.530333
+P4	Pentose phosphate pathway	13537.50633
+P5	Pentose phosphate pathway	18216.47467
+P6	Pentose phosphate pathway	14868.03833
+P2	Pentose phosphate pathway	15569.293
+P7	Pentose phosphate pathway	16959.34333
+P1	Photosynthesis	219030.3787
+P3	Photosynthesis	12062.868
+P4	Photosynthesis	210708.344
+P5	Photosynthesis	277265.0837
+P6	Photosynthesis	261306.495
+P2	Photosynthesis	353435.9373
+P7	Photosynthesis	305575.255
+P1	Plant-pathogen interaction	7369.095667
+P3	Plant-pathogen interaction	2874.381333
+P4	Plant-pathogen interaction	6507.337333
+P5	Plant-pathogen interaction	9698.255667
+P6	Plant-pathogen interaction	7099.214
+P2	Plant-pathogen interaction	5522.411667
+P7	Plant-pathogen interaction	5810.333667
+P1	Porphyrin metabolism	18157.756
+P3	Porphyrin metabolism	11877.77367
+P4	Porphyrin metabolism	21124.55767
+P5	Porphyrin metabolism	28552.58667
+P6	Porphyrin metabolism	23028.04867
+P2	Porphyrin metabolism	24914.07333
+P7	Porphyrin metabolism	27078.69867
+P1	Propanoate metabolism	5191.761
+P3	Propanoate metabolism	5491.554
+P4	Propanoate metabolism	5670.301
+P5	Propanoate metabolism	8052.919667
+P6	Propanoate metabolism	6159.138
+P2	Propanoate metabolism	5693.928
+P7	Propanoate metabolism	5724.168333
+P1	Protein export	6981.923333
+P3	Protein export	4618.373667
+P4	Protein export	6805.932667
+P5	Protein export	9566.628667
+P6	Protein export	7446.007
+P2	Protein export	6408.776
+P7	Protein export	7269.730333
+P1	Purine metabolism	11244.64467
+P3	Purine metabolism	8529.426667
+P4	Purine metabolism	11412.90167
+P5	Purine metabolism	15139.06067
+P6	Purine metabolism	11740.89467
+P2	Purine metabolism	11768.20733
+P7	Purine metabolism	13424.557
+P1	Pyrimidine metabolism	6445.611667
+P3	Pyrimidine metabolism	4282.909333
+P4	Pyrimidine metabolism	6466.113333
+P5	Pyrimidine metabolism	8590.157333
+P6	Pyrimidine metabolism	6667.144333
+P2	Pyrimidine metabolism	6909.815333
+P7	Pyrimidine metabolism	8043.463667
+P1	Pyruvate metabolism	10598.56467
+P3	Pyruvate metabolism	14415.39367
+P4	Pyruvate metabolism	11399.42567
+P5	Pyruvate metabolism	16093.17133
+P6	Pyruvate metabolism	12582.92833
+P2	Pyruvate metabolism	10820.666
+P7	Pyruvate metabolism	11032.931
+P1	Quorum sensing	8365.380667
+P3	Quorum sensing	6900.491
+P4	Quorum sensing	8313.726
+P5	Quorum sensing	11643.32667
+P6	Quorum sensing	8813.251667
+P2	Quorum sensing	7843.651333
+P7	Quorum sensing	8878.892333
+P1	Ribosome	67573.74833
+P3	Ribosome	26114.05567
+P4	Ribosome	59907.362
+P5	Ribosome	79731.24067
+P6	Ribosome	68272.35
+P2	Ribosome	65674.74767
+P7	Ribosome	72156.19567
+P1	RNA degradation	30751.56167
+P3	RNA degradation	8381.520333
+P4	RNA degradation	30844.13767
+P5	RNA degradation	39269.88267
+P6	RNA degradation	44732.02067
+P2	RNA degradation	13815.68267
+P7	RNA degradation	17317.30333
+P1	Salmonella infection	7279.332333
+P3	Salmonella infection	3203.006
+P4	Salmonella infection	8717.425667
+P5	Salmonella infection	10609.749
+P6	Salmonella infection	8986.621333
+P2	Salmonella infection	9809.626
+P7	Salmonella infection	10850.62333
+P1	Terpenoid backbone biosynthesis	5980.363667
+P3	Terpenoid backbone biosynthesis	1914.091667
+P4	Terpenoid backbone biosynthesis	7160.137
+P5	Terpenoid backbone biosynthesis	8811.022
+P6	Terpenoid backbone biosynthesis	7116.536
+P2	Terpenoid backbone biosynthesis	7075.627333
+P7	Terpenoid backbone biosynthesis	7983.778667
+P1	Two-component system	13074.88367
+P3	Two-component system	19619.67867
+P4	Two-component system	12623.445
+P5	Two-component system	18704.431
+P6	Two-component system	12697.08433
+P2	Two-component system	12070.91933
+P7	Two-component system	12513.88733

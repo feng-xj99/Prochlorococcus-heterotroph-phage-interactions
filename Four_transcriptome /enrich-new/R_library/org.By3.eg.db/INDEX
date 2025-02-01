@@ -1,0 +1,4 @@
+org.By3.eg.db           Bioconductor annotation data package
+org.By3.egORGANISM      The Organism for org.By3.eg
+org.By3.eg_dbconn       Collect information about the package
+                        annotation DB
